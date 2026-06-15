@@ -17,6 +17,34 @@ The goal of this project is to build a modern rental platform for electric vehic
 - Admin tools for managing vehicles and bookings
 - Google Maps support for location-based features
 
+## App Screenshots
+
+Add the screenshots to `assets/screenshots/` using the filenames below and they will show up here automatically.
+
+### Customer Flow
+
+| Sign in | Home | Booking |
+| --- | --- | --- |
+| ![Sign in](assets/screenshots/sign-in.png) | ![Customer home](assets/screenshots/customer-home.png) | ![Booking screen](assets/screenshots/booking.png) |
+
+| Booking summary | Booking details | Edit profile |
+| --- | --- | --- |
+| ![Booking summary](assets/screenshots/booking-summary.png) | ![Booking details](assets/screenshots/booking-details.png) | ![Edit profile](assets/screenshots/edit-profile.png) |
+
+| Profile | Light theme home | Vehicles |
+| --- | --- | --- |
+| ![Profile](assets/screenshots/profile.png) | ![Light theme home](assets/screenshots/home-light.png) | ![Vehicles](assets/screenshots/vehicles.png) |
+
+### Admin Flow
+
+| Customer bookings | Booking card | Edit vehicle |
+| --- | --- | --- |
+| ![Customer bookings](assets/screenshots/admin-bookings.png) | ![Booking card](assets/screenshots/admin-booking-card.png) | ![Edit vehicle](assets/screenshots/edit-vehicle.png) |
+
+| Customer profile |
+| --- |
+| ![Customer profile modal](assets/screenshots/customer-profile.png) |
+
 ## Tools And Technologies
 
 - Flutter
