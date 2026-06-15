@@ -102,11 +102,8 @@ flutter run
 
 Name: Heng Ratana
 
+Subject: Mobile App Development II
 
+Teacher: Oum Saokosal
 
-
-Course / Subject: [Add your course or subject here]
-
-Teacher: [Add teacher name here]
-
-Submission Date: [Add submission date here]
+Submission Date: 16 June 2026
