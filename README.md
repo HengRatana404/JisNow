@@ -100,7 +100,10 @@ flutter run
 
 ## Author
 
-Name: Heng Ratana
+Members:
+
+- Heng Ratana
+- Chay Chantha
 
 Subject: Mobile App Development II
 
