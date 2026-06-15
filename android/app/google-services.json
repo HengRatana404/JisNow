@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "741573683431",
+    "project_id": "ecorent-ab12b",
+    "storage_bucket": "ecorent-ab12b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741573683431:android:b257861689aa1db6751a42",
+        "android_client_info": {
+          "package_name": "com.example.ecorent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741573683431-20ndrjl5safebbulohjoicod7a80hq4a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecorent",
+            "certificate_hash": "1d822273f63bc9ec13e015568c37d9663475e43c"
+          }
+        },
+        {
+          "client_id": "741573683431-elhv36pjbrtbqaig01t3rl72874utka1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwm7-HNKssxEI7LVeauMKLs1h5-IlreAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741573683431-elhv36pjbrtbqaig01t3rl72874utka1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

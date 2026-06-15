@@ -1,0 +1,261 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return signedIn() &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+    }
+
+    function validUserProfilePayload() {
+      return request.resource.data.firstName is string &&
+        request.resource.data.lastName is string &&
+        request.resource.data.phoneNumber is string &&
+        request.resource.data.email is string &&
+        request.resource.data.profileComplete == true &&
+        request.resource.data.providerIds is list &&
+        request.resource.data.updatedAt is timestamp &&
+        (!('photoUrl' in request.resource.data) || request.resource.data.photoUrl == null || request.resource.data.photoUrl is string);
+    }
+
+    function validNotificationPayload() {
+      return request.resource.data.keys().hasOnly([
+          'recipientUserId',
+          'recipientRole',
+          'title',
+          'body',
+          'imageUrl',
+          'bookingId',
+          'read',
+          'createdAt'
+        ]) &&
+        request.resource.data.title is string &&
+        request.resource.data.body is string &&
+        (!('imageUrl' in request.resource.data) ||
+          request.resource.data.imageUrl == null ||
+          request.resource.data.imageUrl is string) &&
+        request.resource.data.read == false &&
+        request.resource.data.createdAt is timestamp &&
+        (!('recipientUserId' in request.resource.data) ||
+          request.resource.data.recipientUserId == null ||
+          request.resource.data.recipientUserId is string) &&
+        (!('bookingId' in request.resource.data) ||
+          request.resource.data.bookingId == null ||
+          request.resource.data.bookingId is string) &&
+        (!('recipientRole' in request.resource.data) ||
+          request.resource.data.recipientRole == null ||
+          request.resource.data.recipientRole is string);
+    }
+
+    function validSupportConversationPayload() {
+      return request.resource.data.keys().hasOnly([
+          'type',
+          'customerUserId',
+          'customerName',
+          'customerEmail',
+          'customerPhoneNumber',
+          'customerPhotoUrl',
+          'subject',
+          'bookingId',
+          'bookingVehicleName',
+          'bookingImageUrl',
+          'bookingPickupHub',
+          'bookingScheduleLabel',
+          'bookingStatusLabel',
+          'lastMessage',
+          'lastMessageSenderId',
+          'lastMessageAt',
+          'createdAt',
+          'updatedAt'
+        ]) &&
+        request.resource.data.type is string &&
+        request.resource.data.customerUserId is string &&
+        request.resource.data.customerName is string &&
+        request.resource.data.customerEmail is string &&
+        request.resource.data.customerPhoneNumber is string &&
+        request.resource.data.subject is string &&
+        request.resource.data.lastMessage is string &&
+        request.resource.data.lastMessageSenderId is string &&
+        request.resource.data.lastMessageAt is timestamp &&
+        request.resource.data.createdAt is timestamp &&
+        request.resource.data.updatedAt is timestamp &&
+        (!('customerPhotoUrl' in request.resource.data) ||
+          request.resource.data.customerPhotoUrl == null ||
+          request.resource.data.customerPhotoUrl is string) &&
+        (!('bookingId' in request.resource.data) ||
+          request.resource.data.bookingId == null ||
+          request.resource.data.bookingId is string) &&
+        (!('bookingVehicleName' in request.resource.data) ||
+          request.resource.data.bookingVehicleName == null ||
+          request.resource.data.bookingVehicleName is string) &&
+        (!('bookingImageUrl' in request.resource.data) ||
+          request.resource.data.bookingImageUrl == null ||
+          request.resource.data.bookingImageUrl is string) &&
+        (!('bookingPickupHub' in request.resource.data) ||
+          request.resource.data.bookingPickupHub == null ||
+          request.resource.data.bookingPickupHub is string) &&
+        (!('bookingScheduleLabel' in request.resource.data) ||
+          request.resource.data.bookingScheduleLabel == null ||
+          request.resource.data.bookingScheduleLabel is string) &&
+        (!('bookingStatusLabel' in request.resource.data) ||
+          request.resource.data.bookingStatusLabel == null ||
+          request.resource.data.bookingStatusLabel is string);
+    }
+
+    function validSupportMessagePayload() {
+      return request.resource.data.keys().hasOnly([
+          'senderUserId',
+          'senderName',
+          'senderPhotoUrl',
+          'text',
+          'isAdminSender',
+          'createdAt'
+        ]) &&
+        request.resource.data.senderUserId is string &&
+        request.resource.data.senderName is string &&
+        request.resource.data.text is string &&
+        request.resource.data.isAdminSender is bool &&
+        request.resource.data.createdAt is timestamp &&
+        (!('senderPhotoUrl' in request.resource.data) ||
+          request.resource.data.senderPhotoUrl == null ||
+          request.resource.data.senderPhotoUrl is string);
+    }
+
+    match /users/{userId} {
+      allow create: if isOwner(userId) &&
+        request.resource.data.keys().hasOnly([
+          'firstName',
+          'lastName',
+          'phoneNumber',
+          'email',
+          'photoUrl',
+          'profileComplete',
+          'providerIds',
+          'updatedAt',
+          'createdAt'
+        ]) &&
+        validUserProfilePayload() &&
+        request.resource.data.createdAt is timestamp;
+
+      allow read: if isOwner(userId) || isAdmin();
+
+      allow update: if isAdmin() || (
+        isOwner(userId) &&
+        request.resource.data.diff(resource.data).changedKeys().hasOnly([
+          'firstName',
+          'lastName',
+          'phoneNumber',
+          'email',
+          'photoUrl',
+          'profileComplete',
+          'providerIds',
+          'updatedAt'
+        ]) &&
+        validUserProfilePayload()
+      );
+
+      allow delete: if false;
+    }
+
+    match /vehicles/{vehicleId} {
+      allow read: if signedIn();
+      allow write: if isAdmin();
+    }
+
+    match /app_config/{configId} {
+      allow read: if signedIn();
+      allow write: if isAdmin();
+    }
+
+    match /bookings/{bookingId} {
+      allow create: if false;
+
+      allow read: if signedIn() &&
+        (resource.data.userId == request.auth.uid || isAdmin());
+
+      allow update: if isAdmin() || (
+        signedIn() &&
+        resource.data.userId == request.auth.uid &&
+        request.resource.data.userId == resource.data.userId &&
+        request.resource.data.diff(resource.data).changedKeys().hasOnly([
+          'status',
+          'cancellationSource',
+          'updatedAt'
+        ]) &&
+        request.resource.data.status == 'cancelled' &&
+        request.resource.data.cancellationSource == 'customer'
+      );
+
+      allow delete: if false;
+    }
+
+    match /support_conversations/{conversationId} {
+      allow create: if signedIn() &&
+        request.resource.data.customerUserId == request.auth.uid &&
+        validSupportConversationPayload();
+
+      allow read: if signedIn() &&
+        (resource.data.customerUserId == request.auth.uid || isAdmin());
+
+      allow update: if signedIn() &&
+        validSupportConversationPayload() &&
+        (
+          resource.data.customerUserId == request.auth.uid ||
+          isAdmin()
+        ) &&
+        request.resource.data.type == resource.data.type &&
+        request.resource.data.customerUserId == resource.data.customerUserId &&
+        request.resource.data.bookingId == resource.data.bookingId;
+
+      allow delete: if false;
+
+      match /messages/{messageId} {
+        allow create: if signedIn() &&
+          validSupportMessagePayload() &&
+          request.resource.data.senderUserId == request.auth.uid &&
+          (
+            getAfter(/databases/$(database)/documents/support_conversations/$(conversationId)).data.customerUserId == request.auth.uid ||
+            isAdmin()
+          );
+
+        allow read: if signedIn() &&
+          (
+            get(/databases/$(database)/documents/support_conversations/$(conversationId)).data.customerUserId == request.auth.uid ||
+            isAdmin()
+          );
+
+        allow update, delete: if false;
+      }
+    }
+
+    match /notifications/{notificationId} {
+      allow create: if isAdmin() &&
+        validNotificationPayload() &&
+        (
+          (
+            request.resource.data.recipientRole == 'admin' &&
+            request.resource.data.recipientUserId == null
+          ) ||
+          (
+            isAdmin() &&
+            request.resource.data.recipientUserId is string
+          )
+        );
+
+      allow read: if signedIn() && (
+        resource.data.recipientUserId == request.auth.uid ||
+        (resource.data.recipientRole == 'admin' && isAdmin())
+      );
+
+      allow update, delete: if false;
+    }
+  }
+}

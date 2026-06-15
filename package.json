@@ -1,0 +1,11 @@
+{
+  "name": "jisnow-admin-tools",
+  "private": true,
+  "scripts": {
+    "grant-admin": "node scripts/grant-admin.js",
+    "update-vehicle-location": "node scripts/update-vehicle-location.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.6.0"
+  }
+}
