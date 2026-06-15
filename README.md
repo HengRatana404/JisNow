@@ -23,21 +23,21 @@ The goal of this project is to build a modern rental platform for electric vehic
 
 | Sign in | Home | Booking |
 | --- | --- | --- |
-| ![Customer sign in](assets/screenshots/screen-01.jpg) | ![Customer home](assets/screenshots/screen-02.jpg) | ![Customer booking](assets/screenshots/screen-03.jpg) |
+| ![Customer sign in](assets/screenshots/customer-sign-in.jpg) | ![Customer home](assets/screenshots/customer-home-dark.jpg) | ![Customer booking](assets/screenshots/customer-booking.jpg) |
 
 | Booking summary | Profile | Light theme home |
 | --- | --- | --- |
-| ![Customer booking summary](assets/screenshots/screen-04.jpg) | ![Customer profile](assets/screenshots/screen-05.jpg) | ![Customer home light theme](assets/screenshots/screen-12.jpg) |
+| ![Customer booking summary](assets/screenshots/customer-booking-summary.jpg) | ![Customer profile](assets/screenshots/customer-profile.jpg) | ![Customer home light theme](assets/screenshots/customer-home-light.jpg) |
 
 ### Admin App
 
 | Booking overview | Booking detail card | Booking status update |
 | --- | --- | --- |
-| ![Admin booking overview](assets/screenshots/screen-06.jpg) | ![Admin booking detail card](assets/screenshots/screen-07.jpg) | ![Admin booking status update](assets/screenshots/screen-08.jpg) |
+| ![Admin booking overview](assets/screenshots/admin-booking-overview.jpg) | ![Admin booking detail card](assets/screenshots/admin-booking-card.jpg) | ![Admin booking status update](assets/screenshots/admin-booking-status.jpg) |
 
 | Vehicles | Edit vehicle | Customer profile |
 | --- | --- | --- |
-| ![Admin vehicles](assets/screenshots/screen-09.jpg) | ![Admin edit vehicle](assets/screenshots/screen-10.jpg) | ![Admin customer profile](assets/screenshots/screen-11.jpg) |
+| ![Admin vehicles](assets/screenshots/admin-vehicles.jpg) | ![Admin edit vehicle](assets/screenshots/admin-edit-vehicle.jpg) | ![Admin customer profile](assets/screenshots/admin-customer-profile.jpg) |
 
 ## Tools And Technologies
 
