@@ -19,17 +19,23 @@ The goal of this project is to build a modern rental platform for electric vehic
 
 ## App Screenshots
 
-Screenshots will be added after the image files are uploaded to `assets/screenshots/`.
+These are the current app screenshots from the project build.
 
-Planned gallery:
+| Screen 1 | Screen 2 | Screen 3 |
+| --- | --- | --- |
+| ![App screen 1](assets/screenshots/screen-01.jpg) | ![App screen 2](assets/screenshots/screen-02.jpg) | ![App screen 3](assets/screenshots/screen-03.jpg) |
 
-- Customer sign-in
-- Customer home
-- Booking flow and summary
-- Profile and edit profile
-- Admin bookings
-- Vehicle management
-- Customer profile details
+| Screen 4 | Screen 5 | Screen 6 |
+| --- | --- | --- |
+| ![App screen 4](assets/screenshots/screen-04.jpg) | ![App screen 5](assets/screenshots/screen-05.jpg) | ![App screen 6](assets/screenshots/screen-06.jpg) |
+
+| Screen 7 | Screen 8 | Screen 9 |
+| --- | --- | --- |
+| ![App screen 7](assets/screenshots/screen-07.jpg) | ![App screen 8](assets/screenshots/screen-08.jpg) | ![App screen 9](assets/screenshots/screen-09.jpg) |
+
+| Screen 10 | Screen 11 | Screen 12 |
+| --- | --- | --- |
+| ![App screen 10](assets/screenshots/screen-10.jpg) | ![App screen 11](assets/screenshots/screen-11.jpg) | ![App screen 12](assets/screenshots/screen-12.jpg) |
 
 ## Tools And Technologies
 
