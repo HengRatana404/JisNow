@@ -19,31 +19,17 @@ The goal of this project is to build a modern rental platform for electric vehic
 
 ## App Screenshots
 
-Add the screenshots to `assets/screenshots/` using the filenames below and they will show up here automatically.
+Screenshots will be added after the image files are uploaded to `assets/screenshots/`.
 
-### Customer Flow
+Planned gallery:
 
-| Sign in | Home | Booking |
-| --- | --- | --- |
-| ![Sign in](assets/screenshots/sign-in.png) | ![Customer home](assets/screenshots/customer-home.png) | ![Booking screen](assets/screenshots/booking.png) |
-
-| Booking summary | Booking details | Edit profile |
-| --- | --- | --- |
-| ![Booking summary](assets/screenshots/booking-summary.png) | ![Booking details](assets/screenshots/booking-details.png) | ![Edit profile](assets/screenshots/edit-profile.png) |
-
-| Profile | Light theme home | Vehicles |
-| --- | --- | --- |
-| ![Profile](assets/screenshots/profile.png) | ![Light theme home](assets/screenshots/home-light.png) | ![Vehicles](assets/screenshots/vehicles.png) |
-
-### Admin Flow
-
-| Customer bookings | Booking card | Edit vehicle |
-| --- | --- | --- |
-| ![Customer bookings](assets/screenshots/admin-bookings.png) | ![Booking card](assets/screenshots/admin-booking-card.png) | ![Edit vehicle](assets/screenshots/edit-vehicle.png) |
-
-| Customer profile |
-| --- |
-| ![Customer profile modal](assets/screenshots/customer-profile.png) |
+- Customer sign-in
+- Customer home
+- Booking flow and summary
+- Profile and edit profile
+- Admin bookings
+- Vehicle management
+- Customer profile details
 
 ## Tools And Technologies
 
