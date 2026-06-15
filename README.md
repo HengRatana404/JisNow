@@ -19,23 +19,25 @@ The goal of this project is to build a modern rental platform for electric vehic
 
 ## App Screenshots
 
-These are the current app screenshots from the project build.
+### Customer App
 
-| Screen 1 | Screen 2 | Screen 3 |
+| Sign in | Home | Booking |
 | --- | --- | --- |
-| ![App screen 1](assets/screenshots/screen-01.jpg) | ![App screen 2](assets/screenshots/screen-02.jpg) | ![App screen 3](assets/screenshots/screen-03.jpg) |
+| ![Customer sign in](assets/screenshots/screen-01.jpg) | ![Customer home](assets/screenshots/screen-02.jpg) | ![Customer booking](assets/screenshots/screen-03.jpg) |
 
-| Screen 4 | Screen 5 | Screen 6 |
+| Booking summary | Profile | Light theme home |
 | --- | --- | --- |
-| ![App screen 4](assets/screenshots/screen-04.jpg) | ![App screen 5](assets/screenshots/screen-05.jpg) | ![App screen 6](assets/screenshots/screen-06.jpg) |
+| ![Customer booking summary](assets/screenshots/screen-04.jpg) | ![Customer profile](assets/screenshots/screen-05.jpg) | ![Customer home light theme](assets/screenshots/screen-12.jpg) |
 
-| Screen 7 | Screen 8 | Screen 9 |
-| --- | --- | --- |
-| ![App screen 7](assets/screenshots/screen-07.jpg) | ![App screen 8](assets/screenshots/screen-08.jpg) | ![App screen 9](assets/screenshots/screen-09.jpg) |
+### Admin App
 
-| Screen 10 | Screen 11 | Screen 12 |
+| Booking overview | Booking detail card | Booking status update |
 | --- | --- | --- |
-| ![App screen 10](assets/screenshots/screen-10.jpg) | ![App screen 11](assets/screenshots/screen-11.jpg) | ![App screen 12](assets/screenshots/screen-12.jpg) |
+| ![Admin booking overview](assets/screenshots/screen-06.jpg) | ![Admin booking detail card](assets/screenshots/screen-07.jpg) | ![Admin booking status update](assets/screenshots/screen-08.jpg) |
+
+| Vehicles | Edit vehicle | Customer profile |
+| --- | --- | --- |
+| ![Admin vehicles](assets/screenshots/screen-09.jpg) | ![Admin edit vehicle](assets/screenshots/screen-10.jpg) | ![Admin customer profile](assets/screenshots/screen-11.jpg) |
 
 ## Tools And Technologies
 
