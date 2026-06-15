@@ -100,5 +100,13 @@ flutter run
 
 ## Author
 
-- GitHub: `HengRatana404`
-- Project: `JisNow`
+Name: Heng Ratana
+
+
+
+
+Course / Subject: [Add your course or subject here]
+
+Teacher: [Add teacher name here]
+
+Submission Date: [Add submission date here]
