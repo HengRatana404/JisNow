@@ -39,7 +39,7 @@ The goal of this project is to build a modern rental platform for electric vehic
 | --- | --- | --- |
 | ![Admin vehicles](assets/screenshots/admin-vehicles.jpg) | ![Admin edit vehicle](assets/screenshots/admin-edit-vehicle.jpg) | ![Admin customer profile](assets/screenshots/admin-customer-profile.jpg) |
 
-## Tools And Technologies
+## Tools and Technologies
 
 - Flutter
 - Dart
@@ -73,7 +73,7 @@ linux/         Linux platform files
 macos/         macOS platform files
 ```
 
-## How To Run The Project
+## How to Run the Project
 
 1. Clone the repository.
 2. Open the project in VS Code or Android Studio.
@@ -113,7 +113,7 @@ flutter run
 - `functions/index.js` - backend cloud functions
 - `pubspec.yaml` - dependencies and Flutter asset setup
 
-## Notes For Teacher
+## Notes for Teacher
 
 - This project is built mainly with Flutter and Firebase.
 - The repository includes both frontend app code and backend Firebase Functions code.
@@ -127,6 +127,7 @@ Members:
 - Heng Ratana
 - Chay Chantha
 - Sea Sereyvathana
+- Bon Chanthy
 
 Subject: Mobile App Development II
 
